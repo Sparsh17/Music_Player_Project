@@ -1,7 +1,5 @@
 :root {
-    --background-img: url("media/single_playlist/BG3.jpg");
-    --music-themes-background-image: darkblue;
-    --background-image: url("media/background_image/3541800.jpg");
+    --background-img: url("media/background/background.jpg");
 	--jumbotron-color: #141b41;
 	--playlist-items-background-color: #1a1e33;
 	--playlist-items-background-color-on-hover: #2e3249;
@@ -27,6 +25,7 @@ p {
 	margin: 0px;
 }
 
+/* top navigation bar */
 .nav-bar {
     width: auto;
     height: auto;
@@ -42,10 +41,12 @@ p {
     transition: all ease-in-out 1s;
 }
 
+/* all the divs inside the navigation bar placed side by side*/
 .nav-bar>div {
     display: inline-block;
 }
 
+/* animation for the website logo */
 @keyframes rotation {
     0% {
 		transform: rotate(-15deg);
@@ -58,10 +59,12 @@ p {
 	}
 }
 
+
 .website-logo {
     margin: 7px;
 }
 
+/* website logo image */
 .website-logo img {
     width: 50px;
     height: 50px;
@@ -72,12 +75,13 @@ p {
     color: rgb(80, 220, 255);
 }
 
+/* website title and general description */
 .title>div {
     vertical-align: middle;
     display: inline-block;
 }
 
-/* animation for favoutites text */
+/* animation for favoutites */
 @keyframes flexible {
 	0% {
 		transform: rotate(0deg);
@@ -92,7 +96,7 @@ p {
 		transform: scaleX(1);
 	}
 }
-/* favourites text */
+/* favourites */
 .fav {
 	animation-name: flexible;
 	animation-timing-function: ease-in-out;
@@ -102,11 +106,13 @@ p {
 	animation-iteration-count: infinite;
 }
 
+/* search bar */
 .search-bar {
     width: 20%;
     position: relative;
 }
 
+/* changing the style of the input bar */
 .search-bar input {
     width: 100%;
     font-size: 15px;
@@ -119,14 +125,18 @@ p {
     border: none;
 }
 
+
+/* search icon for input */
 .search-ico {
     color: rgba(0, 0, 0, 0.5);
 }
 
-.mic-ico {
+/* mic icon for input */
+.mic-ico { 
 	color: rgba(0, 0, 0, 0.5);
 }
 
+/* search icon */
 .search-bar > div:nth-child(1) {
 	display: inline-block;
 	position: absolute;
@@ -136,6 +146,7 @@ p {
 	transition: all ease-in-out 0.1s;
 }
 
+/* mic icon */
 .search-bar > div:nth-child(3) {
 	display: inline-block;
 	position: absolute;
@@ -159,6 +170,7 @@ input:focus {
 	animation-iteration-count: infinite;
 }
 
+/* profile picture of the user */
 .profile-picture img {
 	width: 45px;
 	height: 45px;
@@ -166,9 +178,12 @@ input:focus {
 }
 
 
-
-
-/* main */
+/*
+======================================================================================================
+======================================================================================================
+======================================================================================================
+*/
+/*main*/
 main {
 	width: 100%;
 	padding: 0% 3%;
@@ -220,7 +235,7 @@ main {
 			transparent,
 			rgba(20, 27, 65, 1)
 		),
-		url("media/playlist/sheikh-karan-aujla.jpg");
+		url("media/single_playlist/sheikh-karan-aujla.jpg");
 	background-size: cover;
 }
 
@@ -347,7 +362,7 @@ main {
 	height: 100%;
 	padding-right: 2%;
 }
-
+/* now adjusting the contents of left, center and right parts */
 .left > div:nth-child(2) {
 	height: 80%;
 	min-width: 50px;
@@ -402,18 +417,114 @@ main {
 
 
 
+/* =============================================================================================================
+   -------------------------------------------------------------------------------------------------------------
+   =============================================================================================================
+*/
+/* second section of the page starts here */
+/* "more" button properties */
+label {
+	display: none;
+	position: absolute;
+	right: 0%;
+	top: 20%;
+	padding-bottom: 5px;
+	z-index: 3;
+	box-shadow: 0px 0px 2px 1px white;;
+	width: 70px;
+	font-size: 20px;
+	height: 21px;
+	text-align: center;
+	background-image: linear-gradient(red, blue);
+}
+/* on a normal display, it will be hidden */
+label ~ input {
+	display: none;
+}
 
 
+/* ASIDE SECTION -2 */
+/* this is the first section heading of the aside section 2 */
 
+/* section 2 of the main part */
+.section-2 {
+	width: 28%;
+	height: 85vh;
+	z-index: 2;
+}
 
+.section-heading {
+	margin-top: 10px;
+	position: relative;
+	margin-bottom: 12px;
+}
+/* adjusting for side by side display */
+.section-heading div,
+.section-heading h1 {
+	display: inline-block;
+}
+.section-heading h1 {
+	font-size: 23px;
+}
+.section-heading div {
+	position: absolute;
+	bottom: 0%;
+	right: 0px;
+	font-size: 14px;
+}
 
+.list {
+	height: 36vh;
+	overflow: scroll;
+}
 
+/* hiding the scrollbar */
+.list::-webkit-scrollbar {
+	display: none;
+}
 
+/* this is particular item in the "list  container*/
+.list-item {
+	width: 100%;
+	height: 100px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	margin-bottom: 12px;
+}
 
+/* hovering effect for the list item */
+.list-item:hover {
+	background-color: var(--playlist-items-background-color-on-hover);
+}
 
+/* adjusting the name and image of the songs relative to their original position */
+.list-item > div:nth-child(1) {
+	width: 100px;
+	height: 100%;
+	position: relative;
+}
+.list-item > div:nth-child(1) > img {
+	width: 100%;
+	height: 100%;
+}
+.author-name {
+	font-size: 12px;
+	color: rgb(185, 185, 185);
+}
+.extra {
+	text-align: right;
+	height: 100%;
+}
 
-
-
+/*
+==================================================================================================
+--------------------------------------------------------------------------------------------------
+==================================================================================================
+*/
 
 /* Footer section starts here*/
 /* this is the container for the whole footer */
@@ -564,105 +675,3 @@ footer {
 	justify-content: space-around;
 	align-items: center;
 }
-
-
-/* second section of the page starts here */
-/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-/* "more" button properties */
-label {
-	display: none;
-	position: absolute;
-	right: 0%;
-	top: 20%;
-	padding-bottom: 5px;
-	z-index: 3;
-	box-shadow: 0px 0px 2px 1px white;;
-	width: 70px;
-	font-size: 20px;
-	height: 21px;
-	text-align: center;
-	background-image: linear-gradient(red, blue);
-}
-/* on a normal display, it will be hidden */
-label ~ input {
-	display: none;
-}
-
-
-/* ASIDE SECTION -2 */
-/* this is the first section heading of the aside section 2 */
-
-/* section 2 of the main part */
-.section-2 {
-	width: 28%;
-	height: 85vh;
-	z-index: 2;
-}
-
-.section-heading {
-	margin-top: 10px;
-	position: relative;
-	margin-bottom: 12px;
-}
-/* adjusting for side by side display */
-.section-heading div,
-.section-heading h1 {
-	display: inline-block;
-}
-.section-heading h1 {
-	font-size: 23px;
-}
-.section-heading div {
-	position: absolute;
-	bottom: 0%;
-	right: 0px;
-	font-size: 14px;
-}
-
-.list {
-	height: 36vh;
-	overflow: scroll;
-}
-
-/* hiding the scrollbar */
-.list::-webkit-scrollbar {
-	display: none;
-}
-
-/* this is particular item in the "list  container*/
-.list-item {
-	width: 100%;
-	height: 100px;
-	box-sizing: border-box;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	position: relative;
-	margin-bottom: 12px;
-}
-
-/* hovering effect for the list item */
-.list-item:hover {
-	background-color: var(--playlist-items-background-color-on-hover);
-}
-
-/* adjusting the name and image of the songs relative to their original position */
-.list-item > div:nth-child(1) {
-	width: 100px;
-	height: 100%;
-	position: relative;
-}
-.list-item > div:nth-child(1) > img {
-	width: 100%;
-	height: 100%;
-}
-.author-name {
-	font-size: 12px;
-	color: rgb(185, 185, 185);
-}
-.extra {
-	text-align: right;
-	height: 100%;
-}
- 

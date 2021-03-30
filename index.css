@@ -1,12 +1,12 @@
 :root {
-    --background-img: url("media/BG3.jpg");
-    --music-themes-background-image: url("media/istockphoto-1221596090-612x612.jpg");
+    --background-image: url("media/background/background.jpg");
+    --music-themes-background-image: url("media/background/station_bg.jpg");
 }
 
 body {
-    background: var(--background-img);
+    background: var(--background-image);
     margin: 0px;
-    font-family: ALEGREYA, serif;
+    font-family: "ALEGREYA", serif;
     color: white;
     background-position: center;
     background-size: cover;
@@ -23,6 +23,7 @@ p {
 	margin: 0px;
 }
 
+/* top navigation bar */
 .nav-bar {
     width: auto;
     height: auto;
@@ -42,6 +43,7 @@ p {
     display: inline-block;
 }
 
+/* animation for the website logo */
 @keyframes rotation {
     0% {
 		transform: rotate(-15deg);
@@ -54,6 +56,7 @@ p {
 	}
 }
 
+/* website logo image */
 .website-logo {
     margin: 7px;
 }
@@ -64,16 +67,18 @@ p {
     animation: rotation ease-in-out 4s infinite;
 }
 
+/* website function */
 .website-name h3 {
     color: rgb(80, 220, 255);
 }
 
+/* website title */
 .title>div {
     vertical-align: middle;
     display: inline-block;
 }
 
-/* animation for favoutites text */
+/* animation for favoutites */
 @keyframes flexible {
 	0% {
 		transform: rotate(0deg);
@@ -89,7 +94,7 @@ p {
 	}
 }
 
-/* favourites text */
+/* favourites */
 .fav {
 	animation-name: flexible;
 	animation-timing-function: ease-in-out;
@@ -99,11 +104,13 @@ p {
 	animation-iteration-count: infinite;
 }
 
+/* search bar */
 .search-bar {
     width: 20%;
     position: relative;
 }
 
+/* changing the style of the input bar */
 .search-bar input {
     width: 100%;
     font-size: 15px;
@@ -116,14 +123,17 @@ p {
     border: none;
 }
 
+/* search icon for input */
 .search-ico {
     color: rgba(0, 0, 0, 0.5);
 }
 
-.mic-ico {
+/* mic icon for input */
+.mic-ico { 
 	color: rgba(0, 0, 0, 0.5);
 }
 
+/* search icon */
 .search-bar > div:nth-child(1) {
 	display: inline-block;
 	position: absolute;
@@ -133,6 +143,7 @@ p {
 	transition: all ease-in-out 0.1s;
 }
 
+/* mic icon */
 .search-bar > div:nth-child(3) {
 	display: inline-block;
 	position: absolute;
@@ -156,14 +167,18 @@ input:focus {
 	animation-iteration-count: infinite;
 }
 
+/* profile picture of the user */
 .profile-picture img {
 	width: 45px;
 	height: 45px;
 	border-radius: 100%;
 }
 
-
-
+/*
+======================================================================================================
+======================================================================================================
+======================================================================================================
+*/
 /*main*/
 
 main {
@@ -176,6 +191,8 @@ main {
     transition: all ease-in-out 1s;
 }
 
+/* there are two aside sections both of them will have this class.
+taken care of the re-usability of the classes and removed redundancy */
 .aside {
     display: inline-block;
     overflow: hidden;
@@ -189,15 +206,18 @@ main {
 	overflow-x: hidden;
 }
 
+/* section 2 of the main part */
 .section-2 {
 	width: 28%;
 	height: 86vh;
 }
 
+/* overflow is scrollable and scroll bar should be hidden*/
 .section-1::-webkit-scrollbar {
 	display: none;
 }
 
+/* aside section 1 */
 .outer-carousel {
 	position: relative;
 	left: 9vw;
@@ -205,6 +225,7 @@ main {
 	transition: all ease-in-out 1s;
 }
 
+/* carousel */
 .carousel {
 	position: absolute;
 	left: 2%;
@@ -224,6 +245,28 @@ main {
 	transition: all cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s;
 }
 
+/* first image in the carousel */
+/* direction wise, it is the third image in the carousel */
+.carousel img:nth-child(1) {
+	position: relative;
+	left: 41vw;
+	z-index: 2;
+}
+
+/* image which is in the maddle of the carousel */
+.carousel img:nth-child(2) {
+	z-index: 3;
+}
+
+/* third image in the carousel */
+/* direction wise, it is the first image in the carousel */
+.carousel img:nth-child(3) {
+	position: relative;
+	right: 41vw;
+	z-index: 1;
+}
+
+/* animations for carousel */
 .carousel img:hover {
 	z-index: 4;
 	box-shadow: 0px 0px 12px 0.1px black;
@@ -231,152 +274,6 @@ main {
 	width: 27vw;
 }
 
-.heading {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: space-between;
-    margin-bottom: 12%;
-}
-
-.heading h4 a {
-	text-decoration: none;
-	color: white;
-}
-
-.queue-options {
-    display: flex;
-    flex-direction: column;
-    background-color: #b31c4ee6;
-    position: fixed;
-    right: 4%;
-    top: 14%;
-    width: 10%;
-    height: auto;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 1%;
-    box-sizing: border-box;
-    overflow: hidden;
-    z-index: 2;
-    opacity: 0;
-    transform: scale(0);
-    transition: all ease-in-out 1s;
-}
-
-/* when the queue option box becomes target */
-#queue-option-box:target {
-	opacity: 1;
-	transform: scale(1);
-}
-
-.queue-options {
-	color: black;
-}
-.queue-options p {
-	text-align: center;
-}
-.queue-options p a {
-	text-decoration: none;
-}
-
-/* horizontal line in queue options box */
-hr {
-	width: 90%;
-	color: black;
-}
-
-.left-content {
-    display: flex;
-	height: 100%;
-	width: 70%;
-	flex-direction: row;
-	flex-wrap: no-wrap;
-	justify-content: space-between;
-	align-items: center;
-}
-
-
-.playlist-content img {
-    width: 80px;
-    height: 80px;
-}
-
-.cover {
-    width: 80px;
-    height: 80px;
-}
-
-.left-content > div:nth-child(3) {
-	margin-left: 12px;
-	width: 50%;
-	word-wrap: break-word;
-}
-
-.right-content {
-    position: relative;
-    left: 90%;
-    bottom: 62%;
-    width: min-content;
-    height: 20px;
-    color: white;
-    font-size: 20px;
-}
-
-.right-content i {
-	transition: all ease-in-out 0.1s;
-}
-.right-content i:hover {
-	color: red;
-}
-
-.playlist-item {
-    width: 90%;
-    padding: 0 1%;
-    height: auto;
-    box-sizing: border-box;
-    margin: 1%;
-}
-
-/* animation for glowing heart in each of the playlist items */
-@keyframes glowing-heart {
-	0% {
-		color: yellow;
-	}
-	50% {
-		color: orangered;
-	}
-	100% {
-		color: red;
-	}
-}
-/* hover effect on heart */
-.playlist-item:hover .fa-heart {
-	animation-name: glowing-heart;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
-	animation-duration: 1s;
-}
-
-/* playlist items hovering effect */
-.playlist-item:hover {
-	box-shadow: 0px 0px 2px 1px white;
-}
-
-/* playlist content */
-.playlist-content {
-	width: 100%;
-	height: 75vh;
-	/*     margin-top:4vh; */
-	display: flex;
-	flex-direction: column;
-	overflow: scroll;
-	cursor: pointer;
-}
-/* playlist content container scroll bar */
-.playlist-content::-webkit-scrollbar {
-	display: none;
-}
 
 /* this is the play button which will be visible only on hover */
 .play-button {
@@ -404,6 +301,7 @@ hr {
 }
 
 
+/* latest release */
 
 .latest-release {
 	position: relative;
@@ -412,7 +310,6 @@ hr {
 	width: 100%;
 	box-sizing: border-box;
 }
-
 
 /* card is the general class for the components of the latest release part */
 .card {
@@ -446,11 +343,13 @@ hr {
 	margin: 5px 0px;
 }
 
+/* description of the song in the card, which will contain the song nae and author */
 .song-description {
 	margin: auto 9%;
     padding: 10px;
 }
 
+/* options is the class for the 3 dots which needs to be clicked to trigger the latest release drop down menu */
 .options {
 	position: relative;
 	display: flex;
@@ -501,6 +400,8 @@ input[type="checkbox"]:checked ~ .latest-release-dropdown {
 .drop-item p {
 	text-align: center;
 }
+
+/* removing all the styles from the links and formatting them white */
 a {
 	text-decoration: none;
 	color: white;
@@ -608,6 +509,7 @@ a {
 	margin-right: 10px;
 }
 
+/* these divs are for the colourful boxes in the themes section */
 #div1 {
 	width: 12vw;
 	height: 8vw;
@@ -734,15 +636,15 @@ a {
 /* divs corresponding to each of the 3 sub sections in the themes section */
 /* party */
 .music-themes-2 .outer-div:nth-child(1) .inner-div {
-	background-image: url("media/party.jpg");
+	background-image: url("media/music-theme2/party.jpg");
 }
 /* electronic */
 .music-themes-2 .outer-div:nth-child(2) .inner-div {
-	background-image: url("media/electronic.jpg");
+	background-image: url("media/music-theme2/electronic.jpg");
 }
 /* road */
 .music-themes-2 .outer-div:nth-child(3) .inner-div {
-	background-image: url("media/road.jpg");
+	background-image: url("media/music-theme2/road.jpg");
 }
 /* hivering actions: the text should be scaled down on hover and the background image should be scaled up at the same time gap */
 .outer-div:hover .inner-div {
@@ -832,6 +734,13 @@ a {
 }
 
 
+/*
+====================================================================================================================
+--------------------------------------------------------------------------------------------------------------------
+====================================================================================================================
+*/
+/* section 2 */
+/* more button */
 label[for="more"] {
 	display: none;
 	position: absolute;
@@ -852,9 +761,164 @@ label[for="more"]:checked ~ input {
 	display: none;
 }
 
+/* ASIDE SECTION 2 */
+.heading {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 12%;
+}
+
+/* heading for the second  aside section */
+.heading h4 a {
+	text-decoration: none;
+	color: white;
+}
+
+/* these are the properties for the queue options box. the queue options box will be visible when one clicks on the queue button */
+.queue-options {
+    display: flex;
+    flex-direction: column;
+    background-color: #b31c4ee6;
+    position: fixed;
+    right: 4%;
+    top: 14%;
+    width: 10%;
+    height: auto;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1%;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 2;
+    opacity: 0;
+    transform: scale(0);
+    transition: all ease-in-out 1s;
+}
+
+/* when the queue option box becomes target */
+#queue-option-box:target {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.queue-options {
+	color: black;
+}
+.queue-options p {
+	text-align: center;
+}
+.queue-options p a {
+	text-decoration: none;
+}
+
+/* horizontal line in queue options box */
+hr {
+	width: 90%;
+	color: black;
+}
+
+/* left content contains the image, index and name of the song */
+.left-content {
+    display: flex;
+	height: 100%;
+	width: 70%;
+	flex-direction: row;
+	flex-wrap: no-wrap;
+	justify-content: space-between;
+	align-items: center;
+}
 
 
+.playlist-content img {
+    width: 80px;
+    height: 80px;
+}
 
+.cover {
+    width: 80px;
+    height: 80px;
+}
+
+.left-content > div:nth-child(3) {
+	margin-left: 12px;
+	width: 50%;
+	word-wrap: break-word;
+}
+
+/* right content contains the heart icon */
+.right-content {
+    position: relative;
+    left: 90%;
+    bottom: 62%;
+    width: min-content;
+    height: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+.right-content i {
+	transition: all ease-in-out 0.1s;
+}
+.right-content i:hover {
+	color: red;
+}
+
+/* class for a partilcular item in playlist */
+.playlist-item {
+    width: 90%;
+    padding: 0 1%;
+    height: auto;
+    box-sizing: border-box;
+    margin: 1%;
+}
+
+/* animation for glowing heart in each of the playlist items */
+@keyframes glowing-heart {
+	0% {
+		color: yellow;
+	}
+	50% {
+		color: orangered;
+	}
+	100% {
+		color: red;
+	}
+}
+/* hover effect on heart */
+.playlist-item:hover .fa-heart {
+	animation-name: glowing-heart;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-duration: 1s;
+}
+
+/* playlist items hovering effect */
+.playlist-item:hover {
+	box-shadow: 0px 0px 2px 1px white;
+}
+
+/* playlist content */
+.playlist-content {
+	width: 100%;
+	height: 75vh;
+	/*     margin-top:4vh; */
+	display: flex;
+	flex-direction: column;
+	overflow: scroll;
+	cursor: pointer;
+}
+/* playlist content container scroll bar */
+.playlist-content::-webkit-scrollbar {
+	display: none;
+}
+
+/*
+=============================================================================================================
+-------------------------------------------------------------------------------------------------------------
+=============================================================================================================
+*/
 
 /* Footer section starts here*/
 /* this is the container for the whole footer */
