@@ -2,7 +2,7 @@
 @media screen and (max-width: 1200px) {
 
     /* animated favourites text will be hidden for this viewport width*/
-    .favs {
+    .fav {
         display: none !important;
     }
 
